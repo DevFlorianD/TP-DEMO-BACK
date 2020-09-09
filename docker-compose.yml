@@ -1,0 +1,35 @@
+version: '3.6'
+services:
+  php:
+    build: docker/php
+    volumes:
+      - './:/usr/share/nginx/html:consistent'
+    depends_on:
+      - db
+  nginx:
+    image: nginx:alpine
+    ports:
+      - '80:80'
+    volumes:
+      - './:/usr/share/nginx/html:consistent'
+    depends_on:
+      - php
+  db:
+    image: 'postgres:12-alpine'
+    volumes:
+      - 'db-data:/var/lib/postgresql/data:consistent'
+    ports:
+      - '5432:5432'
+    environment:
+      - PGDATA=/var/lib/postgresql/data/pgdata
+      - POSTGRES_DB=demo
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+  composer:
+    image: 'composer:1.8'
+    command: install
+    volumes:
+      - './:/app'
+
+volumes:
+  db-data: {}
