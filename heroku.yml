@@ -1,6 +1,7 @@
 build:
   docker:
     web: docker/php/Dockerfile
-#    nginx: /docker/nginx/Dockerfile
+    nginx: /docker/nginx/Dockerfile
 run:
   web: bundle exec puma -C config/puma.rb
+  nginx: bundle exec puma -C config/puma.rb

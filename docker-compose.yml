@@ -1,19 +1,19 @@
 version: '3.6'
 services:
-  web:
+  php:
     build: docker/php
     volumes:
       - './:/usr/share/nginx/html:consistent'
     depends_on:
       - db
   nginx:
-    image: nginx:alpine
+    build: docker/nginx
     ports:
-      - '80:80'
+      - '8081:80'
     volumes:
       - './:/usr/share/nginx/html:consistent'
     depends_on:
-      - web
+      - php
   db:
     image: 'postgres:12-alpine'
     volumes:
