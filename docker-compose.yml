@@ -1,6 +1,6 @@
 version: '3.6'
 services:
-  php:
+  web:
     build: docker/php
     volumes:
       - './:/usr/share/nginx/html:consistent'
@@ -13,7 +13,7 @@ services:
     volumes:
       - './:/usr/share/nginx/html:consistent'
     depends_on:
-      - php
+      - web
   db:
     image: 'postgres:12-alpine'
     volumes:
