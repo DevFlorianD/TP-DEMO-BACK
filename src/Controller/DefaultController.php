@@ -23,6 +23,11 @@ class DefaultController extends AbstractController
         ], 200, ['Access-Control-Allow-Origin' => '*']);
     }
 
+    /**
+     * @Route("todo", name="api_todo")
+     * @param Request $request
+     * @return JsonResponse
+     */
     public function getTodo(Request $request)
     {
         if ($request->isMethod('POST')) {
