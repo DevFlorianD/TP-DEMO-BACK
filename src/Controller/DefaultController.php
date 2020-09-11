@@ -30,9 +30,7 @@ class DefaultController extends AbstractController
 
             return new JsonResponse(
                 'OK',
-                200,
-                ['Access-Control-Allow-Origin' => '*']
-            );
+                200);
         } else {
             $todos = $this->getDoctrine()->getRepository(Todo::class)->findAll();
 
@@ -51,8 +49,7 @@ class DefaultController extends AbstractController
 
             return $this->json([
                 $arrayTodos
-            ], 200,
-                ['Access-Control-Allow-Origin' => '*']);
+            ], 200);
         }
     }
 
