@@ -30,6 +30,14 @@ class DefaultController extends AbstractController
      */
     public function getTodo(Request $request)
     {
+        return new JsonResponse([
+            [
+                'id' => 1,
+                'title' => 'test 1',
+                'completed' => false,
+            ],
+        ], 200, ['Access-Control-Allow-Origin' => '*']);
+
         if ($request->isMethod('POST')) {
 
             $todo = json_decode($request->getContent(), true);
