@@ -7,6 +7,3 @@ getTodo:
 getTodoId:
     path: /todo/{id}
     controller: App\Controller\DefaultController::getTodoId
-postTodoId:
-    path: /todo/post
-    controller: App\Controller\DefaultController::postTodo
