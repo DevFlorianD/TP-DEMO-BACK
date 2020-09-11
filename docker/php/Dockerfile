@@ -17,4 +17,6 @@ RUN wget https://getcomposer.org/installer -O composer-setup.php
 RUN php composer-setup.php
 RUN mv composer.phar /usr/local/bin/composer
 
+ADD opCache.ini /usr/local/etc/php/conf.d/opCache.ini
+
 WORKDIR /usr/share/nginx/html
