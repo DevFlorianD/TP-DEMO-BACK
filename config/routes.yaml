@@ -1,3 +1,12 @@
 index:
     path: /
     controller: App\Controller\DefaultController::index
+getTodo:
+    path: /todo
+    controller: App\Controller\DefaultController::getTodo
+getTodoId:
+    path: /todo/{id}
+    controller: App\Controller\DefaultController::getTodoId
+postTodoId:
+    path: /todo/post
+    controller: App\Controller\DefaultController::postTodo
