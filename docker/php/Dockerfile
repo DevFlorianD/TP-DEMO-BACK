@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y libicu-dev
 # Install Postgre PDO
 RUN apt-get install -y libpq-dev zip unzip \
     && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
-    && docker-php-ext-install pdo pdo_pgsql pgsql
+    && docker-php-ext-install pdo pdo_pgsql pgsql json
 RUN apt-get clean
 
 RUN pecl install apcu
