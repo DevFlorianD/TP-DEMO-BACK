@@ -14,7 +14,7 @@ class DefaultController extends AbstractController
 {
     public function index(Request $request): JsonResponse
     {
-        header("Access-Control-Allow-Origin: https://mouna06.gitlab.io/esgi-2020-5iw-demo-front/");
+        header("Access-Control-Allow-Origin: https://mouna06.gitlab.io/*");
         if ($request->isMethod('POST')) {
 
             $todo = json_decode($request->getContent(), true);
